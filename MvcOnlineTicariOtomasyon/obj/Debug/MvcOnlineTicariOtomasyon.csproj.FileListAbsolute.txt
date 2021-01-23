@@ -1,0 +1,4 @@
+C:\Users\Onur\Documents\Visual Studio 2015\Projects\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\obj\Debug\MvcOnlineTicariOtomasyon.csprojAssemblyReference.cache
+C:\Users\Onur\Documents\Visual Studio 2015\Projects\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\obj\Debug\MvcOnlineTicariOtomasyon.Migrations.database.resources
+C:\Users\Onur\Documents\Visual Studio 2015\Projects\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\obj\Debug\MvcOnlineTicariOtomasyon.csproj.GenerateResource.cache
+C:\Users\Onur\Documents\Visual Studio 2015\Projects\MvcOnlineTicariOtomasyon\MvcOnlineTicariOtomasyon\obj\Debug\MvcOnlineTicariOtomasyon.csproj.CoreCompileInputs.cache

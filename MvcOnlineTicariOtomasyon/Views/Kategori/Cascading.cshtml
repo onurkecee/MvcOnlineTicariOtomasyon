@@ -1,0 +1,46 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cascading
+
+@{
+    ViewBag.Title = "Cascading";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<div>
+    <h2>URUNLER</h2>
+</div>
+<br />
+<div>
+    @Html.Label("Kategoriler")
+    @Html.DropDownList("DrpKategori", Model.Kategoriler, "Kategori Seçiniz", new { @class = "form-control" })
+    <br />
+</div>
+<div>
+    @Html.Label("Urunler")
+    @Html.DropDownList("DrpUrunler", Model.Urunler, "Urun Seçiniz", new { @class = "form-control" })
+</div>
+
+
+<script src="~/Scripts/jquery-1.7.min.js"></script>
+
+<script>
+    $(function () {
+        $('#DrpKategori').change(function () {
+            var id = $('#DrpKategori').val();
+            $.ajax({
+                url: '/Kategori/Cascading2',
+                data: { p: id },
+                type: "POST",
+                dataType: "Json",
+                success: function (data) {
+                    console.log(data);
+                    $('#DrpUrunler').empty();
+                    for (var i = 0; i < data.length; i++) {
+                        $('#DrpUrunler').append("<option value='" + data[i].Value + "'>" + data[i].Text + "</Option>");
+                    }
+                }
+            });
+        });
+    });
+</script>
+

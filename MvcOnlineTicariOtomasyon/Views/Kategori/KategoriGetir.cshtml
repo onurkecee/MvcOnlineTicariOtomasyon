@@ -1,0 +1,32 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Kategori
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<script src="~/Scripts/jquery-1.7.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<br />
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("KATEGORİ AD")
+        @Html.TextBoxFor(x => x.KATEGORIAD, new { @class = "form-control", @required = "required", @id = "KategoriGuncelle" })
+        @Html.HiddenFor(x => x.KATEGORIID)
+    </div>
+    <br />
+    <button class="btn btn-info" id="KategoriKontrolGuncel">Kategori Güncelle</button>
+
+    <script>
+
+        $("#KategoriKontrolGuncel").click(function () {
+            if ($("#KategoriGuncelle").val() != null && $("#KategoriGuncelle").val() != "") {
+                swal("Güncelleme Başarılı", "Kategori Başarıyla Güncellendi.", "success");
+            }
+        });
+
+    </script>
+}
+
+

@@ -1,0 +1,27 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.KargoDetay
+@{
+    ViewBag.Title = "YeniKargo";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<form class="form-group" method="post" style="margin-top:10px;">
+    @Html.LabelFor(x => x.TAKIPKODU)
+    @*@Html.TextBoxFor(x => x.TAKIPKODU, new { @class = "form-control" })*@
+    <input type="text" value="@ViewBag.takipkod" class="form-control" name="TAKIPKODU" readonly />
+    <br />
+    @Html.LabelFor(x => x.PERSONEL)
+    @Html.TextBoxFor(x => x.PERSONEL, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ALICI)
+    @Html.TextBoxFor(x => x.ALICI, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TARIH)
+    <input type="date" name="TARIH" class="form-control" />
+    <br />
+    @Html.LabelFor(x => x.ACIKLAMA)
+    @Html.TextAreaFor(x => x.ACIKLAMA, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

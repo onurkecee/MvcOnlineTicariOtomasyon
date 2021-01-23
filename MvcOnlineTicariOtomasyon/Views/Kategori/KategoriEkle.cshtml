@@ -1,0 +1,25 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Kategori
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<script src="~/Scripts/jquery-1.7.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<form class="form-group" method="post" id="uye_formu">
+    <br />
+    @Html.Label("KATEGORİ AD")
+    @Html.TextBoxFor(x => x.KATEGORIAD, new { @class = "form-control", @required = "required", @id = "KategoriKaydet"})
+    <br />
+    <button class="btn btn-info" id="KategoriKontrol"> Kategori Kaydet</button>
+
+    <script>
+
+        $("#KategoriKontrol").click(function () {
+            if ($("#KategoriKaydet").val() != null && $("#KategoriKaydet").val() != "") {
+                swal("Kayıt Başarılı", "Kategori Başarıyla Kaydedildi.", "success");
+            }
+        });
+
+    </script>
+</form>

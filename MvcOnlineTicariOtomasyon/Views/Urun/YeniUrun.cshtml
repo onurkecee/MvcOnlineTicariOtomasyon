@@ -1,0 +1,46 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urunler
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<script src="~/Scripts/jquery-1.7.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+<form class="form-group" method="post" style="margin-top:10px;">
+    @Html.ValidationSummary(true)
+    @Html.Label("ÜRÜN ADI")
+    @Html.TextBoxFor(x => x.URUNAD, new { @class = "form-control", @required = "required" })
+    <br />
+    @Html.Label("MARKA")
+    @Html.TextBoxFor(x => x.MARKA, new { @class = "form-control", @required = "required" })
+    <br />
+    @Html.LabelFor(x => x.STOK)
+    @Html.TextBoxFor(x => x.STOK, new { @class = "form-control", @required = "required" })
+    <br />
+    @Html.Label("ALIŞ FİYATI")
+    @Html.TextBoxFor(x => x.ALISFIYAT, new { @class = "form-control", @required = "required" })
+    <br />
+    @Html.Label("SATIŞ FİYATI")
+    @Html.TextBoxFor(x => x.SATISFIYAT, new { @class = "form-control", @required = "required" })
+    <br />
+    @Html.Label("KATEGORİ")
+    @*@Html.TextBoxFor(x => x.KATEGORIID, new { @class = "form-control" })*@
+    @Html.DropDownListFor(x => x.KATEGORIID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    <br />
+    @Html.Label("ÜRÜN GÖRSEL")
+    @Html.TextBoxFor(x => x.URUNGORSEL, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form>
+
+<script>
+                            //$(document).ready(function () {
+                            //    $("#UrunKontrol").click(function () {
+                            //        if ($("#UrunKayit").val() != null) {
+                            //            swal("Kayıt Başarılı", " Ürün Başarıyla Kaydedildi.", "success");
+                            //        }
+                            //    });
+                            //});
+</script>

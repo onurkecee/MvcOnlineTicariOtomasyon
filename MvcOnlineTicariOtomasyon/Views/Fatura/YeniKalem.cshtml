@@ -1,0 +1,26 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.FaturaKalem
+@{
+    ViewBag.Title = "YeniKalem";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post" style="margin-top:10px;">
+    @Html.LabelFor(x => x.ACIKLAMA)
+    @Html.TextBoxFor(x => x.ACIKLAMA, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.MIKTAR)
+    @Html.TextBoxFor(x => x.MIKTAR, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BIRIMFIYAT)
+    @Html.TextBoxFor(x => x.BIRIMFIYAT, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TUTAR)
+    @Html.TextBoxFor(x => x.TUTAR, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.FATURAID)
+    @Html.TextBoxFor(x => x.FATURAID, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form>
+
+

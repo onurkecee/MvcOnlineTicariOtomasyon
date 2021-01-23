@@ -1,0 +1,31 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Faturalar
+@{
+    ViewBag.Title = "FaturaEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post" style="margin-top:10px;">
+    @Html.LabelFor(x => x.FATURASERİNO)
+    @Html.TextBoxFor(x => x.FATURASERİNO, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.FATURASIRANO)
+    @Html.TextBoxFor(x => x.FATURASIRANO, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TARIH)
+    @Html.TextBoxFor(x => x.TARIH, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.SAAT)
+    @Html.TextBoxFor(x => x.SAAT, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.VERGIDAIRESI)
+    @Html.TextBoxFor(x => x.VERGIDAIRESI, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TESLIMEDEN)
+    @Html.TextBoxFor(x => x.TESLIMEDEN, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TESLIMALAN)
+    @Html.TextBoxFor(x => x.TESLIMALAN, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form>
+

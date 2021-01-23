@@ -1,0 +1,12 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Departman
+@{
+    ViewBag.Title = "DepartmanEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post" style="margin-top:10px;">
+    @Html.LabelFor(x => x.DEPARTMANAD)
+    @Html.TextBoxFor(x => x.DEPARTMANAD, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Departman Kaydet</button>
+</form>

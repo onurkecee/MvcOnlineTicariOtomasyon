@@ -1,0 +1,48 @@
+﻿
+@using MvcOnlineTicariOtomasyon.Models.Siniflar;
+@model List<Urunler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("Index", "Urun", FormMethod.Get))
+{
+    <p>
+        Ürün Adı: @Html.TextBox("p", null, new { @style = "width:250px; background-color: #F0F0F0; border:1px solid black;" })
+        <input type="submit" value="Ara" class="btn btn-secondary" />
+    </p>
+}
+
+<table class="table table-bordered" style="margin-top:10px;">
+    <tr>
+        <th>URUN</th>
+        <th>MARKA</th>
+        <th>STOK</th>
+        <th>ALIŞ FİYAT</th>
+        <th>SATIŞ FİYAT</th>
+        <th>KATEGORİ</th>
+        <th>GÖRSEL</th>
+        <th>İŞLEMLER</th>
+    </tr>
+    @foreach (var urun in Model)
+    {
+        <tr>
+            <td>@urun.URUNAD</td>
+            <td>@urun.MARKA</td>
+            <td>@urun.STOK</td>
+            <td>@urun.ALISFIYAT ₺</td>
+            <td>@urun.SATISFIYAT ₺</td>
+            <td>@urun.KATEGORI.KATEGORIAD</td>
+            <td>@urun.URUNGORSEL</td>
+            <td>
+                <a href="/Urun/UrunSil/@urun.URUNID" class="btn btn-danger" title="Sil"><div class="fa fa-times"></div></a>
+                <a href="/Urun/UrunGetir/@urun.URUNID" class="btn btn-success" title="Güncelle"><div class="fa fa-retweet"></div></a>
+                <a href="/Urun/SatisYap/@urun.URUNID" class="btn btn-secondary" title="Satış Yap"><div class="fa fa-credit-card"></div></a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Urun/YeniUrun" class="btn btn-primary">Yeni Ürün</a>
+

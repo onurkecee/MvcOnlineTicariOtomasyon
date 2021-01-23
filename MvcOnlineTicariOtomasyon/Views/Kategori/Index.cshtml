@@ -1,0 +1,130 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.PagedList<Kategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<script src="~/Scripts/jquery-1.7.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<table class="table table-bordered" style="margin-top:10px;">
+    <tr>
+        <th>ID</th>
+        <th>KATEGORİ AD</th>
+        <th>İŞLEMLER</th>
+    </tr>
+    @foreach (var kategori in Model)
+    {
+        <tr>
+            <td>@kategori.KATEGORIID</td>
+            <td>@kategori.KATEGORIAD</td>
+            <td>
+                <a href="/Kategori/KategoriSil/@kategori.KATEGORIID" class="btn btn-danger" onclick="deleteOrder('@kategori.KATEGORIID')" title="Sil"><div class="fa fa-times"></div></a>
+                <a href="/Kategori/KategoriGetir/@kategori.KATEGORIID" class="btn btn-success" title="Güncelle"><div class="fa fa-retweet"></div></a>
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }),new PagedListRenderOptions {
+
+    LiElementClasses=new List<string>
+    {"page-link" }
+})
+<a href="/Kategori/KategoriEkle" class="btn btn-primary">Yeni Kategori Ekle</a>
+
+
+<button class="btn btn-info" id="Btn1" hidden="hidden"> Deneme1</button>
+<button class="btn btn-info" id="Btn2" hidden="hidden"> Deneme2</button>
+<button class="btn btn-info" id="Btn3" hidden="hidden"> Deneme3</button>
+<button class="btn btn-info" id="Btn4" hidden="hidden"> Deneme4</button>
+<button class="btn btn-info" id="Btn5" hidden="hidden"> Deneme5</button>
+<button class="btn btn-info" id="Btn6" hidden="hidden"> Deneme6</button>
+
+
+<script>
+    $('#KategoriSil').click(function () {
+        swall({
+            title: "Emin misiniz ?",
+            text: "Kategori Silinecektir. Geri Dönüşü Olmayacaktır.",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swall("Kategori Kalıcı Olarak Silindi", {
+                        icon: "success",
+                    });
+                }
+                else {
+                    swall("Kategori Silinemedi");
+                }
+            });
+    });
+</script>
+
+
+
+
+@*<script>
+        $('#Btn1').click(function () {
+            swal("Maraba");
+        });
+    </script>
+
+    <script>
+        $('#Btn2').click(function () {
+            swal("Here's the title!", "...and here's the text!");
+        });
+    </script>
+
+    <script>
+        $('#Btn3').click(function () {
+            swal("Good job!", "You clicked the button!", "success");
+        });
+    </script>
+
+    <script>
+        $('#Btn4').click(function () {
+            swal("Click on either the button or outside the modal.")
+            .then((value) => {
+                swal(`The returned value is: ${value}`);
+            });
+            });
+    </script>
+
+    <script>
+            $('#Btn5').click(function () {
+                swal({
+                    title: "Good job!",
+                    text: "You clicked the button!",
+                    icon: "success",
+                    button: "Aww yiss!",
+                });
+        });
+    </script>
+
+    <script>
+        $('#Btn6').click(function () {
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof! Your imaginary file has been deleted!", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
+        });
+    </script>*@
+

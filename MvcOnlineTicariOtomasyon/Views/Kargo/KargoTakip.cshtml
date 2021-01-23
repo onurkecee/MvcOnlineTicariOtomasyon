@@ -1,0 +1,24 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<KargoTakip>
+@{
+    ViewBag.Title = "KargoTakip";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-hover">
+    <tr>
+        <th>AÇIKLAMA</th>
+        <th>TARİH</th>
+
+    </tr>
+
+    @foreach (var kargo in Model)
+    {
+        <tr>
+            <td>@kargo.ACIKLAMA</td>
+            <td>@kargo.TARIH</td>
+        </tr>
+
+    }
+</table>
+
